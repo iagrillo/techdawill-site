@@ -50,13 +50,26 @@ export default function EnquiryForm({ page = 'contact', defaultEngagement, class
     setStatus('sending');
 
     try {
-      const res = await fetch('/api/enquiry', {
+      if (form.company_website) { setStatus('sent'); return; }
+      const res = await fetch('https://formsubmit.co/ajax/techdawill@gmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source_page: page }),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          organisation: form.organisation,
+          enquiry_type: form.engagement_type,
+          interested_in: form.service_interest,
+          message: form.message,
+          page: page,
+          _subject: 'New website enquiry - ' + form.name,
+          _template: 'table',
+          _captcha: 'false',
+        }),
       });
       const data = await res.json().catch(() => ({}));
-      if (res.ok && data?.ok) {
+      if (res.ok && String(data?.success) === 'true') {
         setStatus('sent');
         return;
       }

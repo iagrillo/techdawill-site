@@ -25,7 +25,7 @@ export default function PageHeader({ eyebrow, title, lead, image, imageAlt = '' 
           <Image
             src={image}
             alt={imageAlt}
-            className="h-[240px] w-full object-cover object-top sm:h-[360px] lg:h-[440px]"
+            className="h-[280px] w-full object-cover object-center sm:h-[420px] lg:h-[520px]"
             fittingType="fill"
           />
         </div>
@@ -33,3 +33,4 @@ export default function PageHeader({ eyebrow, title, lead, image, imageAlt = '' 
     </section>
   );
 }
+

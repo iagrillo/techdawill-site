@@ -51,7 +51,7 @@ export default function EnquiryForm({ page = 'contact', defaultEngagement, class
 
     try {
       if (form.company_website) { setStatus('sent'); return; }
-      const res = await fetch('https://formsubmit.co/ajax/techdawill@gmail.com', {
+      const res = await fetch('https://formsubmit.co/ajax/c60a93b140765d8630fc22dfc034502d', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
@@ -225,3 +225,4 @@ export default function EnquiryForm({ page = 'contact', defaultEngagement, class
     </form>
   );
 }
+

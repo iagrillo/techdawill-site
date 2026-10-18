@@ -19,7 +19,7 @@ export default function ServiceCategoryBlock({ category, image, imageAlt = '', t
             <Image
               src={image}
               alt={imageAlt}
-              className="h-[220px] w-full sm:h-[320px] lg:h-[400px]"
+              className="h-[220px] w-full object-cover object-top sm:h-[320px] lg:h-[400px]"
               fittingType="fill"
             />
           </div>

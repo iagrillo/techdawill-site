@@ -27,7 +27,7 @@ export default function Hero() {
         <Image
           src={LOGO}
           alt="Techdawill identity"
-          className="h-full w-full opacity-[0.16]"
+          className="h-full w-full object-contain opacity-[0.16]"
           fittingType="fit"
         />
       </div>
